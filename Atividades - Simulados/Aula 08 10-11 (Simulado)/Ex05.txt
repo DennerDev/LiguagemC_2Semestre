@@ -1,0 +1,20 @@
+QUESTÃO 05 – 0,20 PONTO
+Considere o trecho de um programa em C que mostra comandos condicionais (if) aninhados:
+
+if (B1)  {
+		printf ("Comando 1");
+		printf ("Comando 2");
+	}
+
+else	{	if (B2) 	printf ("Comando 3");
+		else	printf ("Comando 4");
+	}
+printf ("Comando 5");
+
+Analisando este trecho, é correto afirmar que:
+
+(A) o Comando5 sempre será executado.                          (Resposta correta = A)
+(B) se B1 for falso, o Comando3 e o Comando4 serão executados. 
+(C) se B2 for verdadeiro, somente o Comando3 será executado.
+(D) o Comando4 sempre será executado, uma vez que o comando B2 é sempre falso.
+(E) N.D.A.

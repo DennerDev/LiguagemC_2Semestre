@@ -1,0 +1,148 @@
+link como os codigos estão a baixo.
+
+link: https://codeshare.io/X8Wx8Y
+
+Ou 
+
+/* 
+1) Ler 2 números e mostrar a soma.
+Perguntar se o usário deseja continuar no sistema.
+O programa deverá ficar em loop, enquanto o usuário desejar.
+*/
+
+#include <stdio.h>
+int main(void)
+{
+  int A, B;
+  char op='s';  // forçar a entrada no while
+        
+  while (op=='s' || op=='S')
+  {      
+        printf("\n\nDigite o 1º número: ");
+        scanf ("%d",&A);
+        printf("Digite o 2º número: ");
+        scanf ("%d",&B);
+        printf ("A soma é %d ",A+B);
+        printf ("\nDeseja continuar <S/N>: ");
+        scanf ("%s",&op);
+  }
+
+   0;
+}
+
+//--------------------------------------------------------------------------------
+
+/* 
+2) Ler 2 números e mostrar a soma.
+Perguntar se o usário deseja continuar no sistema.
+O programa deverá ficar em loop, enquanto o usuário desejar.
+
+OBS: O programa só poderá aceitar S/s/N/n
+*/
+
+
+
+//--------------------------------------------------------------------------------
+/*
+3) Leia o valor inicial e o valor final do intervalo.
+   Escreva os números PARES no intervalo acima.
+
+   Pergunte se o usuário deseja continuar no sistema <S/N>
+   O programa ficará em LOOP enquanto o usuário assim desejar. 
+*/
+
+#include <stdio.h>
+int main(void) 
+{
+  int N1, N2, cont;
+  char op = 's';   // forçar a entrada no while
+
+ while (op=='s' || op=='S')
+ {
+   printf ("Digite o número INICIAL do intervalo..: ");
+   scanf ("%d",&N1);
+   printf ("Digite o número FINAL do intervalo....: ");
+   scanf ("%d",&N2);
+
+   if (N1 > N2) printf ("Não existe número, neste intervalo, para exibir na tela!!!");
+
+   else for (cont=N1 ; cont<=N2 ; cont++)
+          if (cont % 2 == 0 ) printf ("\n%d",cont); 
+
+
+   printf ("\nDeseja continuar <S/N>: ");
+   scanf ("%s",&op);               
+ }
+  return 0;
+}
+
+
+//--------------------------------------------------------------------------------------------------
+
+
+/*
+Outra maneira de fazer o exercício 3
+------------------------------------
+3) Leia o valor inicial e o valor final do intervalo.
+   Escreva os números PARES no intervalo acima.
+
+   Pergunte se o usuário deseja continuar no sistema <S/N>
+   O programa ficará em LOOP enquanto o usuário assim desejar. 
+*/
+
+#include <stdio.h>
+int main(void) 
+{
+  int N1, N2, cont;
+  char op = 's';   // forçar a entrada no while
+
+ while (op=='s' || op=='S')
+ {
+   printf ("Digite o número INICIAL do intervalo..: ");
+   scanf ("%d",&N1);
+   printf ("Digite o número FINAL do intervalo....: ");
+   scanf ("%d",&N2);
+
+   if (N1 % 2 == 1)   N1++;  // se o nº inicial for ímpar, soma +1
+
+   if (N1 > N2) printf ("Não existe número, neste intervalo, para exibir na tela!!!");
+
+   else for (cont=N1 ; cont<=N2 ; cont=cont+2)
+          printf ("\n%d",cont); 
+
+
+   printf ("\nDeseja continuar <S/N>: ");
+   scanf ("%s",&op);               
+ }
+  return 0;
+}
+
+//--------------------------------------------------------------------------------------------------
+
+/* Seu programa deverá gerar um número de 0 até 10.
+  Você deverá adivinhar o número gerado */
+
+#include <stdio.h>
+#include <time.h>
+#include <stdlib.h>
+int main(void)
+{
+  int magico, num, tentativa=0;
+  srand (time(NULL));
+
+  magico = rand() % 11;  // resto de 0 até 10
+  printf ("%d\n\n ",magico);
+
+  num = 123;   // forçar a entrada no while. Num diferente de 0 até 10
+  while (num != magico)
+  {
+      printf ("\nQual o número secreto? ");
+      scanf ("%d",&num);
+      tentativa++;
+
+      if (num == magico) printf ("Vc acertou na %dª tentativa!",tentativa);
+      else               printf ("xiiii vc errou!!");
+
+  }
+  return 0;
+}
